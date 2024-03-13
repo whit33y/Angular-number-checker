@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <button class="btn btn-primary" (click)="onGameStart()">Start</button>
+      <button
+        class="btn btn-primary"
+        (click)="onGameStart()"
+        [disabled]="buttonClicked"
+      >
+        Start
+      </button>
       <button class="btn btn-danger" (click)="onGameStop()">Stop</button>
       <button class="btn btn-warning" (click)="onGameRestart()">Restart</button>
     </div>

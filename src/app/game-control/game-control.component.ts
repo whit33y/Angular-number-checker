@@ -9,6 +9,7 @@ export class GameControlComponent {
   number: number = 0;
   numbers = [];
   evenNumbers = [];
+  buttonClicked = false;
   oddNumbers = [];
   interval: any;
   @Output() gameStart = new EventEmitter<any>();
@@ -25,12 +26,15 @@ export class GameControlComponent {
       }
       this.numbers.push(this.number);
       this.gameStart.emit(this.number);
+      this.buttonClicked = true;
     }, 200);
   }
   onGameStop() {
     clearInterval(this.interval);
+    this.buttonClicked = false;
   }
   onGameRestart() {
+    this.buttonClicked = false;
     this.number = 0;
     this.evenNumbers = [];
     this.oddNumbers = [];
