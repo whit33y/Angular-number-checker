@@ -19,7 +19,7 @@ export class GameControlComponent {
   onGameStart() {
     this.interval = setInterval(() => {
       this.number += 1;
-      if (this.number % 2 === 0) {
+      if (this.number % 2 !== 0) {
         this.oddNumbers.push(this.number);
       } else {
         this.evenNumbers.push(this.number);
